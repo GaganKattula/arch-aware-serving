@@ -1,0 +1,26 @@
+[project]
+name = "hybrid-serving"
+version = "0.1.0"
+description = "Inference server for hybrid linear/full-attention models (Qwen3.5 / Qwen3.8-27B, text-only)."
+requires-python = ">=3.10"
+dependencies = [
+    "torch>=2.1.0",
+    "transformers>=5.0",
+    "safetensors>=0.4",
+    "inference-baseline",   # A0-A4 dense server, for reference + C6 comparison
+]
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+packages = ["hybrid_serving"]
+
+[tool.uv.sources]
+inference-baseline = { path = "../baseline", editable = true }
+
+[tool.basedpyright]
+venvPath = ".."
+venv = ".venv"
+typeCheckingMode = "standard"

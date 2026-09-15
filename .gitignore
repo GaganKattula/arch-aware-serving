@@ -1,0 +1,33 @@
+# The A-phase server. Lives at github.com/GaganKattula/inference-server —
+# cloned here as a read-only reference, not vendored.
+baseline/
+
+# Environment
+.venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+
+# Reference fixtures — 47 MB, regenerate with hybrid/tests/capture_reference.py
+hybrid/tests/fixtures/
+
+# Model weights
+*.safetensors
+*.bin
+*.pt
+*.pth
+
+# Session-continuity + private working docs (same discipline as the A-phase repo)
+research/log.md
+research/CONTEXT.md
+research/baseline-docs/
+research/scratch/
+
+# OS / editor
+.DS_Store
+.vscode/
+.idea/
+research/NEOVIM_PLAN.md
+research/POSTMORTEM_silent_weight_drop.md
